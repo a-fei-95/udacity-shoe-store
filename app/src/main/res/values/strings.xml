@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ShoeStore</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="email_hint">email@address.com</string>
+    <string name="sign_up"><u>Sign Up</u></string>
+    <string name="login">Login</string>
+    <string name="title">Shoe Store</string>
+    <string name="welcome_title">Welcome to Shoe Store!</string>
+    <string name="welcome_description">This is a shoe store so yeah feel free to browse through it… or not, up to you :)</string>
 </resources>
