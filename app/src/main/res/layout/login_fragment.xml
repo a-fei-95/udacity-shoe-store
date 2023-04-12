@@ -3,42 +3,29 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".login.LoginFragment"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".login.LoginFragment"
+        android:paddingHorizontal="36dp"
         >
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/welcome_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/title"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@id/email_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed"
-            />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/email_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
             android:text="@string/email"
             app:layout_constraintBottom_toTopOf="@id/email_field"
             app:layout_constraintStart_toStartOf="@id/email_field"
-            app:layout_constraintTop_toBottomOf="@+id/welcome_text"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
             />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/email_field"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints="emailAddress"
             android:hint="@string/email_hint"
@@ -62,10 +49,10 @@
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/password_field"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:autofillHints="email@address.com"
-            android:inputType="numberPassword"
+            android:inputType="textPassword"
             app:layout_constraintBottom_toTopOf="@id/sign_up_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -76,9 +63,10 @@
             android:id="@+id/sign_up_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="96dp"
             android:text="@string/sign_up"
             android:textColor="#000000"
+            android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@id/login_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -89,8 +77,9 @@
             android:id="@+id/login_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="48dp"
             android:text="@string/login"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
