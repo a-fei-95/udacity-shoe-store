@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ShoeListFragment"
+    tools:context=".shoe.ShoeListFragment"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,21 +20,22 @@
                 android:id="@+id/shoe_item_list_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
-
-            </LinearLayout>
+                android:orientation="vertical"/>
 
         </ScrollView>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/shoe_item_detail_button"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_margin="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="36dp"
+            android:clickable="true"
             android:contentDescription="@string/shoe_button_cd"
+            android:focusable="true"
+            app:fabCustomSize="56dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_add"
             />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

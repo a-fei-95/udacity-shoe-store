@@ -15,4 +15,11 @@
     <string name="instruction_description">First, second, etc...</string>
     <string name="get_started">Get Started</string>
     <string name="shoe_button_cd">Shoe detail screen</string>
+    <string name="logout">logout</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="description">Description</string>
+    <string name="shoe_size">Shoe Size</string>
+    <string name="company">Company</string>
+    <string name="shoe_name">Shoe Name</string>
 </resources>

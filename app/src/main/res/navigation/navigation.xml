@@ -10,7 +10,7 @@
     <fragment
         android:id="@+id/login_destination"
         android:name="com.udacity.shoestore.login.LoginFragment"
-        android:label="login_fragment"
+        android:label="Shoe Store"
         tools:layout="@layout/login_fragment"
         >
         <action
@@ -22,25 +22,46 @@
     <fragment
         android:id="@+id/welcome_destination"
         android:name="com.udacity.shoestore.welcome.WelcomeFragment"
-        android:label="welcome_fragment"
+        android:label="Welcome"
         tools:layout="@layout/welcome_fragment"
         >
         <action
             android:id="@+id/action_welcome_destination_to_instructionFragment"
-            app:destination="@id/instructionFragment"
+            app:destination="@id/instruction_destination"
             />
     </fragment>
     <fragment
-        android:id="@+id/instructionFragment"
+        android:id="@+id/instruction_destination"
         android:name="com.udacity.shoestore.instruction.InstructionFragment"
-        android:label="instruction_fragment"
+        android:label="Instruction"
         tools:layout="@layout/instruction_fragment"
-        />
+        >
+        <action
+            android:id="@+id/action_instructionFragment_to_shoeListFragment"
+            app:destination="@id/shoeListFragment"
+            />
+    </fragment>
     <fragment
         android:id="@+id/shoeListFragment"
-        android:name="com.udacity.shoestore.ShoeListFragment"
-        android:label="shoe_list_fragment"
+        android:name="com.udacity.shoestore.shoe.ShoeListFragment"
+        android:label="Shoe List"
         tools:layout="@layout/shoe_list_fragment"
-        />
+        >
+        <action
+            android:id="@+id/action_shoeListFragment_to_login_destination"
+            app:destination="@id/login_destination"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeDetailFragment"
+        android:name="com.udacity.shoestore.shoe.ShoeDetailFragment"
+        android:label="shoe_detail_fragment"
+        tools:layout="@layout/shoe_detail_fragment"
+        >
+        <action
+            android:id="@+id/action_shoeDetailFragment_to_shoeListFragment"
+            app:destination="@id/shoeListFragment"
+            />
+    </fragment>
 
 </navigation>
