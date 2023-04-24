@@ -9,7 +9,6 @@ import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.ShoeItemLayoutBinding
 import com.udacity.shoestore.databinding.ShoeListFragmentBinding
 import com.udacity.shoestore.shoe.models.Shoe
-import com.udacity.shoestore.utils.navigateToLoginScreen
 import com.udacity.shoestore.utils.navigateToShoeDetailScreen
 import java.util.*
 
