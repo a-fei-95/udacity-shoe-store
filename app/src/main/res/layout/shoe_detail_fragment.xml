@@ -6,10 +6,20 @@
     tools:context=".login.LoginFragment"
     >
 
+    <data>
+
+        <variable
+            name="shoeViewModel"
+            type="com.udacity.shoestore.shoe.ShoeViewModel"
+            />
+
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingHorizontal="36dp"
+        android:paddingTop="36dp"
         >
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -20,7 +30,6 @@
             app:layout_constraintBottom_toTopOf="@id/shoe_name_field"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed"
             />
 
         <androidx.appcompat.widget.AppCompatEditText
@@ -28,6 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
+            android:text="@={shoeViewModel.shoe.name}"
             app:layout_constraintBottom_toTopOf="@id/company_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -50,6 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
+            android:text="@={shoeViewModel.shoe.company}"
             app:layout_constraintBottom_toTopOf="@id/shoe_size_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -71,7 +82,8 @@
             android:id="@+id/shoe_size_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="number"
+            android:inputType="numberDecimal"
+            android:text="@={`` + shoeViewModel.shoe.size}"
             app:layout_constraintBottom_toTopOf="@id/description_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -94,6 +106,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
+            android:text="@={shoeViewModel.shoe.description}"
             app:layout_constraintBottom_toTopOf="@id/cancel_button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -107,7 +120,6 @@
             android:layout_marginTop="48dp"
             android:text="@string/cancel"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/save_button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/description_field"

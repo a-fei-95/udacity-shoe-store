@@ -4,12 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
-import com.udacity.shoestore.R
 import com.udacity.shoestore.databinding.WelcomeFragmentBinding
-import com.udacity.shoestore.login.LoginFragmentDirections
+import com.udacity.shoestore.utils.navigateToInstructionScreen
 
 class WelcomeFragment : Fragment() {
 
@@ -27,13 +24,7 @@ class WelcomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         with(binding) {
-            welcomeNextButton.setOnClickListener { navigateToInstructionScreen(it) }
+            welcomeNextButton.setOnClickListener { it.navigateToInstructionScreen() }
         }
-    }
-
-    private fun navigateToInstructionScreen(view: View) {
-        view.findNavController().navigate(
-            WelcomeFragmentDirections.actionWelcomeDestinationToInstructionFragment()
-        )
     }
 }

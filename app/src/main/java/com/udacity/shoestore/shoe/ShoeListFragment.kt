@@ -3,12 +3,19 @@ package com.udacity.shoestore.shoe
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.udacity.shoestore.R
+import com.udacity.shoestore.databinding.ShoeItemLayoutBinding
 import com.udacity.shoestore.databinding.ShoeListFragmentBinding
+import com.udacity.shoestore.shoe.models.Shoe
+import com.udacity.shoestore.utils.navigateToLoginScreen
+import com.udacity.shoestore.utils.navigateToShoeDetailScreen
+import java.util.*
 
 class ShoeListFragment : Fragment() {
 
+    private lateinit var viewModel: ShoeViewModel
     private lateinit var binding: ShoeListFragmentBinding
 
     override fun onCreateView(
@@ -20,10 +27,20 @@ class ShoeListFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewModel = ViewModelProvider(requireActivity())[ShoeViewModel::class.java]
+
+        binding.shoeItemDetailButton.setOnClickListener { it.navigateToShoeDetailScreen() }
+
+        viewModel.shoes.observe(viewLifecycleOwner) { addShoesToView(it) }
+    }
+
     @Deprecated("Deprecated in Java")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.logout -> navigateToLoginScreen(requireView())
+            R.id.logout -> onLogout()
         }
         return super.onOptionsItemSelected(item)
     }
@@ -34,9 +51,25 @@ class ShoeListFragment : Fragment() {
         inflater.inflate(R.menu.shoe_list_menu, menu)
     }
 
-    private fun navigateToLoginScreen(view: View) {
-        view.findNavController().navigate(
-            ShoeListFragmentDirections.actionShoeListFragmentToLoginDestination()
-        )
+    private fun onLogout() {
+        viewModel.resetShoeList()
+        requireView().findNavController().popBackStack(R.id.login_destination, false)
+    }
+
+    private fun addShoesToView(shoes: List<Shoe>) {
+        shoes.forEach { shoe ->
+            addShoeToView(shoe)
+        }
+    }
+
+    private fun addShoeToView(shoe: Shoe) {
+        val shoeItemBinding = ShoeItemLayoutBinding.inflate(layoutInflater)
+
+        shoeItemBinding.shoeItemName.text = shoe.name
+        shoeItemBinding.shoeItemCompany.text = shoe.company
+        shoeItemBinding.shoeItemSize.text = shoe.size.toString()
+        shoeItemBinding.shoeItemDescription.text = shoe.description
+
+        binding.shoeItemListLayout.addView(shoeItemBinding.root)
     }
 }

@@ -4,10 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import com.udacity.shoestore.databinding.InstructionFragmentBinding
+import com.udacity.shoestore.utils.navigateToShoeListScreen
 
 class InstructionFragment : Fragment() {
 
@@ -24,12 +23,7 @@ class InstructionFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.instructionGetStartedButton.setOnClickListener { navigateToShoeListScreen(it) }
+        binding.instructionGetStartedButton.setOnClickListener { it.navigateToShoeListScreen() }
     }
 
-    private fun navigateToShoeListScreen(view: View) {
-        view.findNavController().navigate(
-            InstructionFragmentDirections.actionInstructionFragmentToShoeListFragment()
-        )
-    }
 }
