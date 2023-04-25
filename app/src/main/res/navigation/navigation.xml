@@ -16,6 +16,10 @@
         <action
             android:id="@+id/action_login_destination_to_welcome_destination"
             app:destination="@id/welcome_destination"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
             />
     </fragment>
 
@@ -28,6 +32,10 @@
         <action
             android:id="@+id/action_welcome_destination_to_instructionFragment"
             app:destination="@id/instruction_destination"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
             />
     </fragment>
     <fragment
@@ -39,6 +47,10 @@
         <action
             android:id="@+id/action_instructionFragment_to_shoeListFragment"
             app:destination="@id/shoe_list_destination"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/login_destination"
             app:popUpToInclusive="false"
             />
@@ -52,12 +64,16 @@
         <action
             android:id="@+id/action_shoeListFragment_to_shoeDetailFragment"
             app:destination="@id/shoe_detail_fragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
             />
     </fragment>
     <fragment
         android:id="@+id/shoe_detail_fragment"
         android:name="com.udacity.shoestore.shoe.ShoeDetailFragment"
-        android:label="shoe_detail_fragment"
+        android:label="Shoe Detail"
         tools:layout="@layout/shoe_detail_fragment"
         />
 

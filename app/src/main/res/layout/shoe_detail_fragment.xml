@@ -15,6 +15,8 @@
 
     </data>
 
+    <!-- Used ConstraintLayout layout here because the texts and text fields are vertical but the
+         buttons are horizontally aligned. -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -27,90 +29,87 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/shoe_name"
-            app:layout_constraintBottom_toTopOf="@id/shoe_name_field"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/shoe_name_field"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
             android:inputType="text"
             android:text="@={shoeViewModel.shoe.name}"
-            app:layout_constraintBottom_toTopOf="@id/company_text"
+            app:layout_constraintBottom_toBottomOf="@id/shoe_name_text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/shoe_name_text"
+            app:layout_constraintStart_toEndOf="@id/shoe_name_text"
+            app:layout_constraintTop_toTopOf="@id/shoe_name_text"
             />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/company_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="36dp"
             android:text="@string/company"
-            app:layout_constraintBottom_toTopOf="@id/company_field"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/shoe_name_field"
+            app:layout_constraintStart_toStartOf="@id/shoe_name_text"
+            app:layout_constraintTop_toBottomOf="@id/shoe_name_text"
             />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/company_field"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="text"
             android:text="@={shoeViewModel.shoe.company}"
-            app:layout_constraintBottom_toTopOf="@id/shoe_size_text"
+            app:layout_constraintBottom_toBottomOf="@id/company_text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/company_text"
+            app:layout_constraintStart_toStartOf="@id/shoe_name_field"
+            app:layout_constraintTop_toTopOf="@id/company_text"
             />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/shoe_size_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="36dp"
             android:text="@string/shoe_size"
-            app:layout_constraintBottom_toTopOf="@id/shoe_size_field"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/company_field"
+            app:layout_constraintStart_toStartOf="@id/company_text"
+            app:layout_constraintTop_toBottomOf="@id/company_text"
             />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/shoe_size_field"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
             android:text="@={`` + shoeViewModel.shoe.size}"
-            app:layout_constraintBottom_toTopOf="@id/description_text"
+            app:layout_constraintBottom_toBottomOf="@id/shoe_size_text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/shoe_size_text"
+            app:layout_constraintStart_toStartOf="@id/shoe_name_field"
+            app:layout_constraintTop_toTopOf="@id/shoe_size_text"
             />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/description_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="36dp"
             android:text="@string/description"
-            app:layout_constraintBottom_toTopOf="@id/description_field"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/shoe_size_field"
+            app:layout_constraintStart_toStartOf="@id/shoe_size_text"
+            app:layout_constraintTop_toBottomOf="@id/shoe_size_text"
             />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/description_field"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="text"
             android:text="@={shoeViewModel.shoe.description}"
-            app:layout_constraintBottom_toTopOf="@id/cancel_button"
+            app:layout_constraintBottom_toBottomOf="@id/description_text"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/description_text"
+            app:layout_constraintStart_toStartOf="@id/shoe_name_field"
+            app:layout_constraintTop_toTopOf="@id/description_text"
             />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -118,7 +117,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp"
+            android:background="@color/colorPrimary"
             android:text="@string/cancel"
+            android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintEnd_toStartOf="@id/save_button"
             app:layout_constraintStart_toStartOf="parent"
@@ -129,7 +130,9 @@
             android:id="@+id/save_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
             android:text="@string/save"
+            android:textColor="@color/white"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/cancel_button"

@@ -7,12 +7,12 @@
     <string name="login">Login</string>
     <string name="title">Shoe Store</string>
     <string name="welcome_title">Welcome to Shoe Store!</string>
-    <string name="welcome_description">This is a shoe store so yeah feel free to browse through it… or not, up to you :)</string>
+    <string name="welcome_description">This is your favourite shoe store app! Get started now :D </string>
     <string name="next">Next</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="instruction_title">Instruction</string>
-    <string name="instruction_description">First, second, etc...</string>
+    <string name="instruction_description">Use the floating "plus" button on the shoe list to add more shoe items!</string>
     <string name="get_started">Get Started</string>
     <string name="shoe_button_cd">Shoe detail screen</string>
     <string name="logout">logout</string>
