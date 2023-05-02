@@ -8,6 +8,8 @@
 
     <data>
 
+        <import type="com.udacity.shoestore.utils.Converter"/>
+
         <variable
             name="shoeViewModel"
             type="com.udacity.shoestore.shoe.ShoeViewModel"
@@ -20,8 +22,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingHorizontal="36dp"
-        android:paddingTop="36dp"
+        android:paddingHorizontal="@dimen/shoe_store_padding"
+        android:paddingTop="@dimen/shoe_store_padding"
         >
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -50,7 +52,7 @@
             android:id="@+id/company_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="@dimen/shoe_store_padding"
             android:text="@string/company"
             app:layout_constraintStart_toStartOf="@id/shoe_name_text"
             app:layout_constraintTop_toBottomOf="@id/shoe_name_text"
@@ -72,7 +74,7 @@
             android:id="@+id/shoe_size_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="@dimen/shoe_store_padding"
             android:text="@string/shoe_size"
             app:layout_constraintStart_toStartOf="@id/company_text"
             app:layout_constraintTop_toBottomOf="@id/company_text"
@@ -83,7 +85,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:inputType="numberDecimal"
-            android:text="@={`` + shoeViewModel.shoe.size}"
+            android:text="@={Converter.doubleToString(shoeViewModel.shoe.size)}"
             app:layout_constraintBottom_toBottomOf="@id/shoe_size_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/shoe_name_field"
@@ -94,7 +96,7 @@
             android:id="@+id/description_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="@dimen/shoe_store_padding"
             android:text="@string/description"
             app:layout_constraintStart_toStartOf="@id/shoe_size_text"
             app:layout_constraintTop_toBottomOf="@id/shoe_size_text"

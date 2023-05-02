@@ -3,6 +3,7 @@ package com.udacity.shoestore.shoe
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.udacity.shoestore.R
@@ -14,8 +15,8 @@ import java.util.*
 
 class ShoeListFragment : Fragment() {
 
-    private lateinit var viewModel: ShoeViewModel
     private lateinit var binding: ShoeListFragmentBinding
+    private val viewModel: ShoeViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,8 +29,6 @@ class ShoeListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        viewModel = ViewModelProvider(requireActivity())[ShoeViewModel::class.java]
 
         binding.shoeItemDetailButton.setOnClickListener { it.navigateToShoeDetailScreen() }
 

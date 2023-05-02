@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:orientation="vertical"
-        android:paddingHorizontal="36dp"
+        android:paddingHorizontal="@dimen/shoe_store_padding"
         >
 
         <androidx.appcompat.widget.AppCompatTextView
